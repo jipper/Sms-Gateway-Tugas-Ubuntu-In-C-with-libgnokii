@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkListStore" id="liststore_outbox">
+    <columns>
+      <!-- column-name Tujuan -->
+      <column type="gchararray"/>
+      <!-- column-name Pesan -->
+      <column type="gchararray"/>
+      <!-- column-name Status -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkWindow" id="window">
+    <signal name="destroy" handler="keluar"/>
+    <child>
+      <object class="GtkFixed" id="fixed1">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkEntry" id="entry_nomor_tujuan">
+            <property name="width_request">171</property>
+            <property name="height_request">28</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">•</property>
+          </object>
+          <packing>
+            <property name="x">138</property>
+            <property name="y">24</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry_pesan_tujuan">
+            <property name="width_request">172</property>
+            <property name="height_request">26</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="invisible_char">•</property>
+          </object>
+          <packing>
+            <property name="x">138</property>
+            <property name="y">61</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="width_request">100</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Nomor Tujuan</property>
+          </object>
+          <packing>
+            <property name="x">7</property>
+            <property name="y">25</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label2">
+            <property name="width_request">100</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Pesan</property>
+          </object>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">61</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="button_kirim">
+            <property name="label" translatable="yes">Kirim</property>
+            <property name="width_request">100</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_button_kirim_clicked"/>
+          </object>
+          <packing>
+            <property name="x">328</property>
+            <property name="y">44</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="width_request">399</property>
+            <property name="height_request">133</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTreeView" id="treeview_outbox">
+                <property name="width_request">374</property>
+                <property name="height_request">147</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="model">liststore_outbox</property>
+                <property name="headers_clickable">False</property>
+                <property name="search_column">0</property>
+                <child>
+                  <object class="GtkTreeViewColumn" id="treeviewcolumn2">
+                    <property name="title">tujuan</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext2"/>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="treeviewcolumn3">
+                    <property name="title">pesan</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext3"/>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="treeviewcolumn1">
+                    <property name="title">Status</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="cellrenderertext1"/>
+                      <attributes>
+                        <attribute name="text">2</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">14</property>
+            <property name="y">160</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkProgressBar" id="progressbar_sinyal">
+            <property name="width_request">104</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="show_text">True</property>
+          </object>
+          <packing>
+            <property name="x">138</property>
+            <property name="y">97</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label3">
+            <property name="width_request">100</property>
+            <property name="height_request">24</property>
+            <property name="visible">True</property>
+            <property name="label" translatable="yes">Sinyal</property>
+          </object>
+          <packing>
+            <property name="x">4</property>
+            <property name="y">96</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="button_buka_file_settingan">
+            <property name="label" translatable="yes">Buka Settingan</property>
+            <property name="width_request">99</property>
+            <property name="height_request">31</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_button_buka_file_settingan_clicked"/>
+          </object>
+          <packing>
+            <property name="x">15</property>
+            <property name="y">125</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="togglebutton_connect">
+            <property name="label" translatable="yes">Connect</property>
+            <property name="width_request">96</property>
+            <property name="height_request">31</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <signal name="toggled" handler="on_togglebutton_connect_toggled"/>
+          </object>
+          <packing>
+            <property name="x">121</property>
+            <property name="y">124</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
