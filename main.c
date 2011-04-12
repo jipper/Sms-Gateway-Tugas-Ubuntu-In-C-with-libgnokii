@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
 
-  gtk_main();
+    gtk_main();
     g_slice_free(dialog_main,unit->info_dialog_main);
     g_slice_free(pegang,unit);
 
