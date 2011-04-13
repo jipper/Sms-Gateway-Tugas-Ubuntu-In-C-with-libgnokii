@@ -1,1 +1,18 @@
-cm buat tugas ja kok
+sending SMS with libgnokii in C
+OS : Ubuntu
+
+required :
+- libgtk
+- libgnokii
+
+
+Compile and Debug :
+$ make
+$ gdb -q dist/Debug/GNU-Linux-x86/sms_gateway_tugas 
+
+and run with "r"
+
+sukses y...
+
+
+
