@@ -1,0 +1,7 @@
+ [global]
+  connection = serial
+  port = /dev/ttyUSB2
+  model = AT
+  debug = on
+
+ 
